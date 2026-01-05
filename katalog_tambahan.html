@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk - Karya FA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style khusus untuk mempercantik tampilan daftar produk */
+        .product-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .product-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: var(--purple-dark);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+            border-left: 5px solid var(--blue-pastel);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .product-item:hover {
+            transform: translateX(10px);
+            background: var(--purple-pastel);
+            border-left-color: var(--purple-dark);
+        }
+
+        .badge-best {
+            background: #FFD700;
+            color: #856404;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid var(--blue-pastel);
+            margin-bottom: 30px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-bar:focus {
+            border-color: var(--purple-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <aside>
+        <div class="brand-logo">Karya FA 🎬</div>
+        <nav>
+            <a href="index.html" class="nav-link-single">🏠 Beranda Utama</a>
+            <a href="kontak.html" class="nav-link-single">📱 Hubungi Kami</a>
+            <a href="testi.html" class="nav-link-single">🌟 Testimoni</a>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="welcome-clean">
+            <h1>📦 Katalog Produk MOD</h1>
+            <p>Jelajahi berbagai koleksi MOD ETS 2 terbaik dari Karya FA. Klik pada produk untuk melihat detail lebih lanjut.</p>
+        </section>
+
+        <input type="text" id="searchInput" class="search-bar" placeholder="Tulis apa yang kamu" onkeyup="filterProducts()">
+
+        <div class="product-list-grid" id="productList">
+            <a href="aset.html" class="product-item">💎 3D MODEL ALL FORMAT <span class="badge-best">File mentah 3D model</span></a>
+            <a href="produk1.html" class="product-item">💎 (ETS 2) Mod Bus Jebut 3 Medium <span class="badge-best">Best seller</span></a>
+            <a href="produk2.html" class="product-item">💎 (ETS 2) Mod Bus Rexus Piala Mas <span class="badge-best">Best seller</span></a>
+            <a href="produk3.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep3 MH</a>
+            <a href="produk4.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep3 edit Jetbus 3 VA</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 MH</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep5 MH - <span style="color: red;">Coming Soon</span></a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep6 MH</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Avante SA</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris SR3 Yello flash VA</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Jetbus 5 EAS - <span style="color: red;">Coming Soon</span></a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris EP3 edit Jetbus 3 Nmodder</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V2</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V3</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V4</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V5</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V6</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V7</a>
+        </div>
+
+        <footer>
+            Made with ❤️ by Karya FA Production | © 2026
+        </footer>
+    </main>
+
+    <script>
+        // Fungsi Pencarian (Filter)
+        function filterProducts() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.getElementsByClassName('product-item');
+
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].innerText.toLowerCase().includes(input)) {
+                    items[i].style.display = "flex";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+
+        // Suara klik
+        const soundClick = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+        document.querySelectorAll('.product-item').forEach(item => {
+            item.addEventListener('click', () => { soundClick.play(); });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni Pelanggan - Karya FA 🎬</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Khusus untuk Testimoni agar terlihat seperti chat atau review card */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .testi-card {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+
+        .testi-card:hover {
+            border-color: var(--purple-pastel);
+            transform: scale(1.02);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--purple-pastel);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            color: var(--purple-dark);
+            font-size: 1.2rem;
+        }
+
+        .user-meta h4 {
+            font-size: 1rem;
+            color: var(--purple-dark);
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 0.8rem;
+        }
+
+        .comment {
+            font-style: italic;
+            color: #4a5568;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .product-bought {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.75rem;
+            background: #f1f5f9;
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: #718096;
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: #edf2f7;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <aside>
+        <div class="brand-logo">Karya FA 🎬</div>
+        <nav>
+            <a href="index.html" class="nav-link-single">🏠 Kembali ke Beranda</a>
+            <a href="katalog_tambahan.html" class="nav-link-single">📦 Katalog Produk</a>
+            <a href="kontak.html" class="nav-link-single">📱 Hubungi Kami</a>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="welcome-clean">
+            <h1>Apa Kata Mereka? 🌟</h1>
+            <p>Terima kasih atas dukungan para sahabat Karya FA! Kepuasan kalian adalah semangat kami untuk terus berkarya di dunia simulasi ETS2.</p>
+        </section>
+
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="quote-icon">"</div>
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-meta">
+                        <h4>Andra Wijaya</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="comment">"Mod Jetbus 3 Medium Z nya keren parah om! Detailnya mantap, suaranya jernih, pas banget dipake mblusuk ke map sempit. Gak nyesel beli di Karya FA!"</p>
+                <span class="product-bought">Membeli: Jetbus 3 Medium Z</span>
+            </div>
+
+            <div class="testi-card">
+                <div class="quote-icon">"</div>
+                <div class="user-info">
+                    <div class="user-avatar">R</div>
+                    <div class="user-meta">
+                        <h4>Rizky ETS2 Mania</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="comment">"Aksesoris Ep3 nya cocok banget buat Jetbus 3 saya. Flare lampunya enak diliat pas malem-malem. Fast respon juga sellernya!"</p>
+                <span class="product-bought">Membeli: Mod Aksesoris Ep3</span>
+            </div>
+
+            <div class="testi-card">
+                <div class="quote-icon">"</div>
+                <div class="user-info">
+                    <div class="user-avatar">S</div>
+                    <div class="user-meta">
+                        <h4>Sultan Gaming</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="comment">"Sudah langganan beli mod di sini dari jaman blogspot. Kualitas makin hari makin meningkat. Ditunggu update Mod Jetbus 5 nya bang!"</p>
+                <span class="product-bought">Membeli: Mod Bus Rexus</span>
+            </div>
+
+            <div class="testi-card">
+                <div class="quote-icon">"</div>
+                <div class="user-info">
+                    <div class="user-avatar">B</div>
+                    <div class="user-meta">
+                        <h4>Bimo Saputro</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="comment">"Gak ribet pasangnya, instruksinya jelas. Begitu pasang langsung work di v1.49. Karya FA emang jaminan kualitas."</p>
+                <span class="product-bought">Membeli: Aksesoris Jetbus 3 VA</span>
+            </div>
+        </div>
+
+        <div class="highlight-box bg-purple" style="margin-top: 50px; text-align: center;">
+            <h3>Ingin Memberikan Ulasan?</h3>
+            <p>Kirimkan screenshot pengalaman bermainmu menggunakan Mod Karya FA melalui WhatsApp kami!</p>
+            <a href="kontak.html" class="nav-link-single" style="display: inline-block; width: auto; margin-top: 15px;">Kirim Testimoni Sekarang</a>
+        </div>
+
+        <footer>
+            Made with ❤️ by Karya FA Production | © 2026
+        </footer>
+    </main>
+
+    <script>
+        const soundClick = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+        document.querySelectorAll('.testi-card').forEach(item => {
+            item.addEventListener('click', () => { soundClick.play(); });
+        });
+    </script>
+</body>
+</html>

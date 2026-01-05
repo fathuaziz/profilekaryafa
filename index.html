@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karya FA - Official Website 🎨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <div class="popup-overlay" id="welcomePopup">
+        <div class="popup-card">
+            <h2>Halo kawan! 👋</h2>
+            <p>Selamat datang di <strong>Karya FA </strong>
+            <br>Yuk, silakan jelajahi! Siapa tahu produk yang kamu cari ada di sini. ✨</p>
+            <button class="btn-close" onclick="closePopup()">Mulai Jelajahi ✨</button>
+        </div>
+    </div>
+
+    <audio id="soundPop" src="https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3"></audio>
+    <audio id="soundClick" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+
+    <aside>
+        <div class="brand-logo">Karya FA 🎬</div>
+        <nav>
+            <a href="index.html" class="nav-link-single">🏠 Beranda Utama</a>
+            <a href="botchat.html" class="nav-link-single nav-chatbot-highlight">
+    <span>🤖 CHATBOT ADMIN</span>
+    <span style="font-size: 0.7rem; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 10px;">LIVE</span>
+</a>
+            <div class="menu-item">
+                <button class="dropdown-btn" onclick="toggleDropdown()">
+                    📦 Katalog Produk <span id="arrow">▼</span>
+                </button>
+                 <div class="dropdown-container" id="productDrop">
+                    <a href="aset.html"><span style="color: rgb(255, 0, 136); font-weight: bold;">💎 3D MODEL ALL FORMAT - File mentah 3D model</span> </a>
+                    <a href="produ2k1.html">💎 (ETS 2) Mod Bus Jebut 3 Medium - Best seller</a>
+                    <a href="produ2k2.html">💎 (ETS 2) Mod Bus Rexus Piala Mas - Best seller</a>
+                    <a href="produk3.html">💎 (ETS 2) Mod Aksesoris Ep3 MH</a>
+                    <a href="produk4.html">💎 (ETS 2) Mod Aksesoris Ep3 edit Jetbus 3 VA</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4 MH</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep5 MH - <span style="color: red; font-weight: bold;">Coming Soon</span></a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep6 MH</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Avante SA</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris SR3 Yello flash VA</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Jetbus 5 EAS - <span style="color: red; font-weight: bold;">Coming Soon</span></a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris EP3 edit Jetbus 3 Nmodder</a>
+                    <a href="produk5.html">💎 (ETS 2) </a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                    <a href="produk5.html">💎 (ETS 2) Mod Aksesoris Ep4</a>
+                </div>
+ 
+            <a href="kontak.html" class="nav-link-single">📱 Hubungi Kami</a>
+           
+            <a href="testi.html" class="nav-link-single">🌟 Testimoni</a>
+            
+        </nav>
+
+
+
+ 
+    </div>
+         <div class="sidebar-footer">
+        <p>Yuk, intip lebih lanjut di bawah! 👇</p>
+        <p>Scroll ke bawah untuk mulai membaca.</p>
+    </div>
+    </aside>
+
+
+<main>
+    <div class="read-overlay" id="readOverlay">
+        <button class="btn-read-now" onclick="unlockContent()">📖 Baca Sekarang</button>
+    </div>
+<div class="content-wrapper content-blurred" id="mainContent">
+        <section class="welcome-clean">
+            <h1>Selamat Datang di Karya FA</h1>
+            <p><strong>FA production karya FA</strong> adalah kreator spesialis aset dan MOD untuk game simulator, khususnya <strong>Euro Truck Simulator 2</strong>.</p>
+            <p style="margin-top: 15px;">Kami menghadirkan solusi kreatif agar pengalaman bermainmu jadi lebih nyata dan seru. Mari berkarya bersama kami! ✨</p>
+           <br>
+            <p>Silahkan cek produk kita di bagian <span style="color: red; font-weight: bold;">Katalog Produk</span> pada menu di atas. Kita juga punya cabang bisnis lain nya, apa itu?, silahkan scroll ke bawah yak!! ✨</p>
+        </section>
+
+        <h2 class="section-title">🚚 Edukasi Simulasi & Mod</h2>
+        <div class="ets-grid">
+            <div class="highlight-box bg-blue">
+                <h3>Euro Truck Simulator 2 🛣️</h3>
+                <p>Simulator mengemudi truk legendaris yang memungkinkan Anda menjelajahi keindahan jalanan Eropa dengan sangat realistis.</p>
+            </div>
+
+            <div class="highlight-box bg-purple">
+                <h3>Modifikasi (MOD) 🛠️</h3>
+                <p>Kami menciptakan mod berkualitas agar game terasa lebih lokal! Tersedia pilihan mod <strong>GRATIS</strong> dan <strong>SALE</strong>.</p>
+            </div>
+
+            <div class="highlight-box bg-info full-width">
+                <h3>Info Mod Sale & Free 💎</h3>
+                <p><strong>Mod Sale:</strong> Pastikan Anda selalu membeli langsung melalui author resmi untuk menghindari pembajakan (Ilegal User).</p>
+                <p style="margin-top: 10px;"><strong>Mod Free:</strong> Bebas digunakan secara gratis selama menjaga original link dan tidak di-reupload!</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">🚀 Eksplorasi Bisnis Kami</h2>
+        <div class="grid-sub">
+            <a href="p_fapro.html" class="card-sub">
+                <h3>FA production</h3>
+                <p>Visual & Modding</p>
+            </a>
+            <a href="p_ach.html" class="card-sub">
+                <h3>Aditama Holiday</h3>
+                <p>Tourism & Travel</p>
+            </a>
+            <a href="sub-bisnis3.html" class="card-sub">
+                <h3>Aditama Varled</h3>
+                <p>Lighting Concept</p>
+            </a>
+            <a href="sub-bisnis4.html" class="card-sub">
+                <h3>Aliza Media</h3>
+                <p>Content Creator</p>
+            </a>
+        </div>
+
+        <footer>
+            Made with ❤️ by Karya FA Production | © 2026
+        </footer>
+        </div>
+    </main>
+
+    <script>
+        const soundPop = document.getElementById('soundPop');
+        const soundClick = document.getElementById('soundClick');
+
+        // --- 1. Fungsi Buka/Tutup Katalog ---
+        function toggleDropdown() {
+            const drop = document.getElementById("productDrop");
+            const arrow = document.getElementById("arrow");
+            if (soundClick) soundClick.play();
+            
+            if (drop.style.display === "block") {
+                drop.style.display = "none";
+                arrow.style.transform = "rotate(0deg)";
+            } else {
+                drop.style.display = "block";
+                arrow.style.transform = "rotate(180deg)";
+            }
+        }
+
+        // --- 2. Fungsi Hapus Blur (Baca Sekarang) ---
+        function unlockContent() {
+            const content = document.getElementById('mainContent');
+            const overlay = document.getElementById('readOverlay');
+
+            if (content && overlay) {
+                if (soundClick) soundClick.play();
+                
+                // Hilangkan class blur & tambah class jernih
+                content.classList.remove('content-blurred');
+                content.classList.add('content-clear');
+
+                // Hilangkan tombol overlay
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 500);
+            }
+        }
+
+        // --- 3. Logic saat Halaman Dimuat (Popup) ---
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const popup = document.getElementById('welcomePopup');
+                if(popup) popup.classList.add('active');
+                if(soundPop) soundPop.play().catch(e => console.log("Audio butuh interaksi user"));
+            }, 1500);
+        });
+
+        // --- 4. Fungsi Tutup Popup ---
+        function closePopup() {
+            if (soundClick) soundClick.play();
+            const popup = document.getElementById('welcomePopup');
+            if(popup) popup.classList.remove('active');
+        }
+    </script>
+</body>
+</html>

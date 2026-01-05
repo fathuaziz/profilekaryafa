@@ -1,0 +1,56 @@
+/* Pengaturan Overlay di Desktop (Tetap Fixed) */
+.read-overlay {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    bottom: 0;
+    background: rgba(214, 160, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* --- PERUBAHAN KHUSUS HP (Sesuai Gambar Anda) --- */
+@media (max-width: 992px) {
+    .read-overlay {
+        position: relative; /* Mengikuti aliran scroll, bukan melayang diam */
+        left: 0;
+        height: 300px; /* Memberi ruang agar tombol muncul di bawah menu */
+        background: transparent; /* Hilangkan background ungu transparan agar bersih */
+        margin-top: 20px;
+    }
+
+    /* Memastikan tombol tidak menutupi menu saat pertama buka */
+    .btn-read-now {
+        position: relative;
+        z-index: 2001;
+    }
+
+    /* Konten yang blur tetap berada di bawah tombol */
+    .content-blurred {
+        margin-top: -100px; /* Menarik konten agar sedikit mendekat ke tombol */
+    }
+}
+
+
+function unlockContent() {
+    const content = document.getElementById('mainContent');
+    const overlay = document.getElementById('readOverlay');
+
+    if (content && overlay) {
+        if (soundClick) soundClick.play();
+        
+        content.classList.remove('content-blurred');
+        content.classList.add('content-clear');
+
+        // Menghilangkan overlay dengan halus
+        overlay.style.transition = "0.5s";
+        overlay.style.opacity = '0';
+        
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 500);
+    }
+}

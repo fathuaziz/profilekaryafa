@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Karya FA 🎬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <aside>
+        <div class="brand-logo">Karya FA 🎬</div>
+        <nav>
+            <a href="index.html" class="nav-link-single">🏠 Kembali ke Beranda</a>
+            <a href="katalog_tambahan.html" class="nav-link-single">📦 Katalog Produk</a>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="welcome-clean">
+            <h1>Hubungi Kami 📱</h1>
+            <p>Silakan hubungi kami melalui platform di bawah ini untuk pemesanan atau pertanyaan.</p>
+        </section>
+
+        <div class="grid-layout">
+            <a href="https://wa.me/628123456789" class="card-contact border-wa">
+                <div class="icon-box">📞</div>
+                <div class="info-text">
+                    <h4>WhatsApp Order</h4>
+                    <p>+62 812-3456-789</p>
+                </div>
+            </a>
+
+            <a href="https://instagram.com/username" class="card-contact border-ig">
+                <div class="icon-box">📸</div>
+                <div class="info-text">
+                    <h4>Instagram</h4>
+                    <p>@karya_fa_official</p>
+                </div>
+            </a>
+
+            <a href="https://tiktok.com/@username" class="card-contact border-tt">
+                <div class="icon-box">🎵</div>
+                <div class="info-text">
+                    <h4>TikTok</h4>
+                    <p>@karya_fa_production</p>
+                </div>
+            </a>
+
+            <a href="https://youtube.com/c/channel" class="card-contact border-yt">
+                <div class="icon-box">▶️</div>
+                <div class="info-text">
+                    <h4>YouTube</h4>
+                    <p>Karya FA</p>
+                </div>
+            </a>
+
+            <a href="mailto:email@gmail.com" class="card-contact border-mail">
+                <div class="icon-box">📧</div>
+                <div class="info-text">
+                    <h4>Email</h4>
+                    <p>karyafa@gmail.com</p>
+                </div>
+            </a>
+        </div>
+
+        <footer>
+            Made with ❤️ by Karya FA Production | © 2026
+        </footer>
+    </main>
+
+    <script>
+        const soundClick = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+        document.querySelectorAll('.card-contact').forEach(item => {
+            item.addEventListener('click', () => { soundClick.play(); });
+        });
+    </script>
+</body>
+</html>
