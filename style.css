@@ -258,7 +258,7 @@ main {
 /* --- RESPONSIVE MOBILE --- */
 @media (max-width: 992px) {
     body { flex-direction: column; }
-    aside { width: 100%; height: 670px; position: relative; transform: translateY(-100%); animation: slideInMobile 0.8s forwards; }
+    aside { width: 100%; height: auto; position: relative; transform: translateY(-100%); animation: slideInMobile 0.8s forwards; }
     main { margin-left: 0; padding: 25px; }
     .ets-grid { grid-template-columns: 1fr; }
     @keyframes slideInMobile { to { transform: translateY(0); } }
@@ -452,6 +452,16 @@ nav a, nav .menu-item {
         left: 0; /* Di HP, tidak ada sidebar di kiri, jadi set ke 0 agar tengah */
             bottom: 2;
    background: rgba(214, 160, 255, 0.2); /* Background transparan */
+    }
+}
+
+/* Untuk layar HP (maksimal lebar 768px) */
+@media (max-width: 768px) {
+    .btn-read-now {
+        margin-top: 450px; /* Tambah angka ini untuk semakin menurunkan tombol */
+        display: block;   /* Memastikan margin bekerja dengan baik */
+        margin-left: auto;
+        margin-right: auto; /* Tetap di tengah secara horizontal */
     }
 }
 
