@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni Pelanggan - Karya FA</title>
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <aside>
+        <div class="brand-logo">Karya FA 🎬</div>
+        <nav>
+            <a href="index.html" class="nav-link-single">🏠 Kembali ke Beranda</a>
+            <a href="katalog_tambahan.html" class="nav-link-single">📦 Katalog Produk</a>
+            <a href="kontak.html" class="nav-link-single">📱 Hubungi Kami</a>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="welcome-clean">
+            <h1>Apa Kata Mereka?</h1>
+            <p>Terima kasih atas dukungan para sahabat Karya FA! Kepuasan kalian adalah semangat kami untuk terus berkarya.</p>
+        </section>
+
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="quote-icon">"</div>
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div class="user-meta">
+                        <h4>Andra Wijaya</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="comment">"Mod Jetbus 3 Medium nya keren parah om! Detailnya mantap, pas banget dipake mblusuk ke map sempit. Gak nyesel beli di Karya FA!"</p>
+                <span class="product-bought">Membeli: Jetbus 3 Medium</span>
+            </div>
+
+            <div class="testi-card">
+                <div class="quote-icon">"</div>
+                <div class="user-info">
+                    <div class="user-avatar">R</div>
+                    <div class="user-meta">
+                        <h4>Rizky</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="comment">"Aksesoris Ep3 nya cocok banget buat Jetbus 3 VA. Acc nya lengkap. Fast respon juga sellernya!"</p>
+                <span class="product-bought">Membeli: Mod Aksesoris Ep3VA</span>
+            </div>
+
+            <div class="testi-card">
+                <div class="quote-icon">"</div>
+                <div class="user-info">
+                    <div class="user-avatar">S</div>
+                    <div class="user-meta">
+                        <h4>Sultan Gaming</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="comment">"Sudah langganan beli mod di sin. Kualitas makin hari makin meningkat. Ditunggu update Mod Jetbus 5 nya bang!"</p>
+                <span class="product-bought">Membeli: Mod Bus Rexus</span>
+            </div>
+
+            <div class="testi-card">
+                <div class="quote-icon">"</div>
+                <div class="user-info">
+                    <div class="user-avatar">S</div>
+                    <div class="user-meta">
+                        <h4>Saputro utomo</h4>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <p class="comment">"Gak ribet pasangnya, instruksinya jelas. Begitu pasang langsung work di v1.49. Karya FA emang jaminan kualitas."</p>
+                <span class="product-bought">Membeli: Aksesoris ep6</span>
+            </div>
+        </div>
+
+        <div class="highlight-box bg-purple" style="margin-top: 50px; text-align: center;">
+            <h3>Ingin Memberikan Ulasan?</h3>
+            <p>Kirimkan screenshot pengalaman bermain menggunakan produk dari Karya FA melalui WhatsApp kami!</p>
+            <a href="kontak.html" class="nav-link-single" style="display: inline-block; width: auto; margin-top: 15px;">Kirim Testimoni Sekarang</a>
+        </div>
+
+        <footer>
+            Made with ❤️ by Karya FA Production | © 2026
+        </footer>
+    </main>
+
+    <script>
+        const soundClick = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+        document.querySelectorAll('.testi-card').forEach(item => {
+            item.addEventListener('click', () => { soundClick.play(); });
+        });
+    </script>
+</body>
+</html>

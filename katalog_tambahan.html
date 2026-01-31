@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk - Karya FA</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <button id="theme-toggle">
+        <span id="theme-icon">🌙</span> &nbsp; <span id="theme-text">Mode</span>
+    </button>
+
+    <div class="bg-overlay"></div>
+
+    <aside>
+        <div class="brand-logo">Karya FA 🎬</div>
+        <nav>
+            <a href="index.html" class="nav-link-single">🏠 Beranda Utama</a>
+            <a href="kontak.html" class="nav-link-single">📱 Hubungi Kami</a>
+            <a href="testi.html" class="nav-link-single">🌟 Testimoni</a>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="welcome-clean">
+            <h1 class="catalog-title">📦 Katalog Produk MOD</h1>
+            <p class="catalog-desc">Jelajahi berbagai koleksi MOD ETS 2 terbaik dari Karya FA. Klik pada produk untuk melihat detail lebih lanjut.</p>
+        </section>
+
+        <input type="text" id="searchInput" class="search-bar" placeholder="Cari produk yang kamu butuhkan..." onkeyup="filterProducts()">
+
+        <div class="product-list-grid" id="productList">
+            <a href="aset.html" class="product-item">💎 3D MODEL ALL FORMAT <span class="badge-best">File Mentah</span></a>
+            <a href="produk1.html" class="product-item">💎 (ETS 2) Mod Bus Jetbus 3 Medium <span class="badge-best">Best Seller</span></a>
+            <a href="produk2.html" class="product-item">💎 (ETS 2) Mod Bus Rexus Piala Mas <span class="badge-best">Best Seller</span></a>
+            <a href="produk3.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep3 MH</a>
+            <a href="produk4.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep3 edit Jetbus 3 VA</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 MH</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep5 MH - <span class="coming-soon">Coming Soon</span></a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep6 MH</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Avante SA</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris SR3 Yello flash VA</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Jetbus 5 EAS - <span class="coming-soon">Coming Soon</span></a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris EP3 edit Jetbus 3 Nmodder</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V2</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V3</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V4</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V5</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V6</a>
+            <a href="produk5.html" class="product-item">💎 (ETS 2) Mod Aksesoris Ep4 V7</a>
+        </div>
+
+        <footer class="main-footer">
+            Made with ❤️ by Karya FA Production | © 2026
+        </footer>
+    </main>
+
+    <script>
+        function filterProducts() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.getElementsByClassName('product-item');
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText.toLowerCase();
+                items[i].style.display = text.includes(input) ? "flex" : "none";
+            }
+        }
+
+        const soundClick = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+        document.querySelectorAll('.product-item').forEach(item => {
+            item.addEventListener('click', () => { try { soundClick.play(); } catch(e) {} });
+        });
+    </script>
+</body>
+</html>

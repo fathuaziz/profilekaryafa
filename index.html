@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karya FA - Official Website 🎨</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+
+<body>
+
+
+    
+<button id="theme-toggle" class="nav-link-single">
+        <span id="theme-icon">🌙</span> &nbsp; <span id="theme-text"></span>
+    </button>
+</body>
+
+
+
+    <div class="bg-overlay"></div>
+
+    <div class="popup-overlay" id="welcomePopup">
+        <div class="popup-card">
+            <h2>Halo kawan! 👋</h2>
+            <p>Selamat datang di <strong>Karya FA</strong>
+            <br>Cari apa yang kamu butuhkan 🤩</p>
+            <button class="btn-close" onclick="closePopup()">Mulai Jelajahi ✨</button>
+        </div>
+    </div>
+ 
+    <audio id="soundPop" src="https://assets.mixkit.co/active_storage/sfx/2003/2003-preview.mp3"></audio>
+    <audio id="soundClick" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+
+    <aside>
+   
+        
+
+
+        <div class="brand-logo">Karya FA 🎬
+
+
+        </div>
+        <nav>
+            
+            <a href="index.html" class="nav-link-single">🏠 Beranda Utama</a>
+            <a href="botchat.html" class="nav-link-single nav-chatbot-highlight">
+                <span>🤖 CHATBOT ADMIN</span>
+                <span style="font-size: 0.7rem; background: rgba(255, 0, 0, 0.4); padding: 2px 8px; border-radius: 10px;">LIVE</span>
+            </a>
+            <div class="menu-item">
+                <button class="dropdown-btn" onclick="toggleDropdown()">
+                    📦 Katalog Produk <span id="arrow">▼</span>
+                </button>
+                 <div class="dropdown-container" id="productDrop">
+                    <a href="aset.html"><span style="color: rgb(255, 0, 136); font-weight: bold;">💎 3D MODEL ALL FORMAT</span></a>
+                    <a href="produk1.html">💎 (ETS 2) Mod Bus Jetbus 3</a>
+                    <a href="produk2.html">💎 (ETS 2) Mod Bus Rexus</a>
+                </div>
+            </div>
+            <a href="kontak.html" class="nav-link-single">📱 Hubungi Kami</a>
+            <a href="testi.html" class="nav-link-single">🌟 Testimoni</a>
+        </nav>
+        <div class="sidebar-footer">
+            <p>UNTUK MENGETAHUI KAMI LEBIH LANJUT</p>
+        </div>
+    </aside>
+<main>
+    <div class="read-overlay" id="readOverlay">
+        <button class="btn-read-now" onclick="unlockContent()">📖 Masuk ke Dashboard</button>
+    </div>
+  
+    <div class="content-wrapper content-blurred" id="mainContent">
+   
+        
+<div class="custom-lang-switcher">
+    <button onclick="translateTo('id')" class="lang-btn">🇮🇩 Indo</button>
+    <button onclick="translateTo('en')" class="lang-btn">🇺🇸 English</button>
+</div>
+
+
+
+
+
+
+        <hr style="border: 0.5px solid rgba(255,255,255,0.1); margin: 40px 0;">
+
+<h2 class="section-title">🚀 Eksplorasi Bisnis Kami</h2>
+<p style="text-align: center; color: var(--blue-dark); margin-bottom: 30px;">Silakan pilih salah satu layanan kami:</p>
+
+<section class="welcome-clean"> 
+    <div class="grid-sub">
+        <a href="p_fapro.html" class="card-sub">
+            <span class="bg-emoji1">🎮</span>
+            <span class="bg-emoji2">🎮</span>
+            <h3 style="color: var(--purple-dark);">FA Production</h3>
+            <p style="color: var(--blue-dark);">Modding Game Simulator</p>
+        </a>
+
+        <a href="p_ach.html" class="card-sub">
+            <span class="bg-emoji1">🚌</span>
+            <span class="bg-emoji2">🚌</span>
+            <h3 style="color: var(--purple-dark);">Aditama Holiday</h3>
+            <p style="color: var(--blue-dark);">Layanan Tour & Travel</p>
+        </a>
+
+        <a href="belum_nulis.html" class="card-sub">
+            <span class="bg-emoji1">💡</span>
+            <span class="bg-emoji2">💡</span>
+            <h3 style="color: var(--purple-dark);">Aditama Varled</h3>
+            <p style="color: var(--blue-dark);">Lighting Concept & custom lampu kendaraan.</p>
+        </a>
+
+        <a href="sub-bisnis4.html" class="card-sub">
+            <span class="bg-emoji1">🖌️</span>
+            <span class="bg-emoji2">🖌️</span>
+            <h3 style="color: var(--purple-dark);">Aditama Creative</h3>
+            <p style="color: var(--blue-dark);">Merchandise Karya Kreatif.</p>
+        </a>
+
+        <a href="sub-bisnis4.html" class="card-sub">
+            <span class="bg-emoji1">🎬</span>
+            <span class="bg-emoji2">🎬</span>
+            <h3 style="color: var(--purple-dark);">Aliza Media</h3>
+            <p style="color: var(--blue-dark);">Digital Content Creator & Jasa Dokumentasi Kreatif.</p>
+        </a>
+
+        <a href="sub-bisnis4.html" class="card-sub">
+            <span class="bg-emoji1">🫵🏻🫵🏻</span>
+            <span class="bg-emoji2">👋🏻👋🏻</span>
+            <h3 style="color: var(--purple-dark);">Tentang kami lain nya</h3>
+            <p style="color: var(--blue-dark);">Informasi lain.</p>
+        </a>
+
+
+              <a href="kontak.html" class="card-sub">
+            <span class="bg-emoji1">📱☎️</span>
+            <span class="bg-emoji2">☎️📱</span>
+            <h3 style="color: var(--purple-dark);">Hubungi kami</h3>
+         
+        </a>
+    </div>
+</section>
+        <footer>
+            <p>Made with ❤️ by Karya FA Production | © 2026</p>
+        </footer>
+    </div>
+</main>
+<script>
+    const soundPop = document.getElementById('soundPop');
+    const soundClick = document.getElementById('soundClick');
+
+    function toggleDropdown() {
+        const drop = document.getElementById("productDrop");
+        const arrow = document.getElementById("arrow");
+        if (soundClick) soundClick.play();
+        const isOpen = drop.style.display === "block";
+        drop.style.display = isOpen ? "none" : "block";
+        arrow.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+    }
+
+    function unlockContent() {
+        const content = document.getElementById('mainContent');
+        const overlay = document.getElementById('readOverlay');
+        if (soundClick) soundClick.play();
+        content.classList.remove('content-blurred');
+        content.classList.add('content-clear');
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        setTimeout(() => { overlay.style.display = 'none'; }, 500);
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const popup = document.getElementById('welcomePopup');
+            if(popup) popup.classList.add('active');
+            if(soundPop) soundPop.play().catch(e => console.log("Audio play blocked"));
+        }, 1500);
+    });
+
+    function closePopup() {
+        if (soundClick) soundClick.play();
+        document.getElementById('welcomePopup').classList.remove('active');
+    }
+</script>
+
+
+
+
+
+<div id="google_translate_element" style="display:none;"></div>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'id',
+            includedLanguages: 'en,id', // Hanya tampilkan Inggris & Indo
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

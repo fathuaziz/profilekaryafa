@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chat Support - Karya FA Production</title>
+       <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<button id="theme-toggle" class="nav-link-single">
+        <span id="theme-icon">🌙</span> &nbsp; <span id="theme-text"></span>
+    </button>
+</body>
+    <div class="chat-container">
+        <div class="chat-header">
+ <a href="index.html" class="back-btn" title="Kembali ke Beranda" style="text-decoration: none; display: flex; align-items: center; color: white;">
+        <span style="transform: scaleX(-1); display: inline-block; font-size: 1.2rem;">&#10140;</span>
+        
+        <span style="font-size: 0.9rem; margin-left: 8px; font-weight: 500;">Beranda</span>
+    </a>
+            <div class="header-title">Admin Bot Karya FA (beta 1)</div>
+        </div>
+
+        <div class="chat-messages" id="chatBox">
+            <div class="msg msg-bot">
+                Halo! 👋 Ada yang bisa kami bantu?<br><br>
+                Ingin tahu tentang kami? Silahkan tanyakan apapun di sini.
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="userInput" class="chat-input" placeholder="Tulis pesan..." onkeypress="if(event.key==='Enter')sendMessage()">
+            <button class="btn-send" onclick="sendMessage()">Kirim</button>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chatBox');
+        const userInput = document.getElementById('userInput');
+
+        function check(input, target) {
+            return input.toLowerCase().includes(target.toLowerCase());
+        }
+
+        function sendMessage() {
+            const text = userInput.value.trim();
+            if (!text) return;
+            appendMessage(text, 'user');
+            userInput.value = "";
+            setTimeout(() => botReply(text), 600);
+        }
+
+        function appendMessage(text, sender) {
+            const div = document.createElement('div');
+            div.className = `msg msg-${sender}`;
+            div.innerHTML = text;
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+       function botReply(input) {
+            let res = "Maaf kawan, admin kurang mengerti. Bisa coba ketik <b>Produk, Order, Prosedur</b> atau <b>Kontak</b>?, dan kamu bisa tanyakan juga tentang bisnis kami lainnya kok, coba pertanyaan lain";
+            let msg = input.toLowerCase();
+
+            // --- 1. CEK PRODUK SPESIFIK DULU (PRIORITAS UTAMA) ---
+            // Meskipun ada kata "order", jika ada nama produk, bot akan kasih link produknya dulu.
+
+            // 3D MODEL
+            if (check(msg, '3d') || check(msg, 'model') || check(msg, 'mentah') || check(msg, 'aset game')) {
+                res = `<b>3D Model All Format (File Mentah)</b><br><br>
+                Boleh tahu rencananya untuk kebutuhan apa? Karena ini adalah file mentah untuk aset game atau kebutuhan 3D lainnya.<br><br>
+                Kami punya <b>200+ model 3D yang ready</b> untuk dijual. Silakan diskusi melalui FB atau WA agar lebih jelas kawan.`;
+            }
+            // MOD MEDIUM
+            else if (check(msg, 'medium') || check(msg, 'jebut')) {
+                res = `<b>Mod Jetbus 3 Medium (Best Seller)</b><br> Harga: 100k.<br>
+                <a href="produk_medium.html">Lihat Detail & Review Produk</a><br><br>
+                <b>Cara Order:</b> Langsung DM ke FB Admin (Link di menu kontak).`;
+            }
+            // EP6 & AVANTE
+            else if (check(msg, 'ep6') || check(msg, 'avante')) {
+                res = `<b>Aksesoris EP6 MH / Avante SA</b><br> Harga: 35k.<br>
+                <b>Promo:</b> Beli EP6 Gratis Avante SA (Berlaku sebaliknya).<br>
+                <a href="produk_aksesoris_ea.html">Lihat Detail & Syarat Pembelian</a>`;
+            }
+            // JB3VA & SR3VA
+            else if (check(msg, 'jb3 va') || check(msg, 'ep3 va') || check(msg, 'sr3') || check(msg, 'va')) {
+                res = `<b>Aksesoris JB3VA / EP3VA / SR3VA</b><br> Harga: 35k.<br>
+                <b>Promo:</b> Beli JB3VA/EP3VA Gratis SR3VA (Berlaku sebaliknya).<br>
+                <a href="produk_aksesoris_va.html">Lihat Detail & Syarat Pembelian</a>`;
+            }
+            // REXUS
+            else if (check(msg, 'rexus')) {
+                res = `<b>Mod Bus Rexus Piala Mas</b><br> Harga: 75k.<br>
+                <a href="produk_rexus.html">Lihat Detail Produk</a>`;
+            }
+
+            // --- 2. JIKA TIDAK ADA NAMA PRODUK, BARU CEK KATA "ORDER/BELI" UMUM ---
+            else if (check(msg, 'order') || check(msg, 'pesan') || check(msg, 'beli')) {
+                res = `<b>Mau order produk apa kawan? 😊</b><br><br>
+                <b>⚠️ DISKLAIMER PENTING (MOD ETS 2):</b><br>
+                Semua pembelian Mod ETS 2 <b>WAJIB</b> melalui Facebook Resmi kami. Kami tidak melayani penjualan di luar itu karena pengiriman file dan update dilakukan melalui <b>Grup Facebook Khusus</b>.<br><br>
+                <b>Silakan Hubungi Admin:</b><br>
+                • FB: <a href="https://www.facebook.com/fathu.aziz.1" target="_blank">Fathu Aziz</a><br>
+                • WA: 0812-xxxx-xxxx (Khusus diskusi 3D Model/Aset)`;
+            }
+                // Tambahkan di paling atas fungsi botReply
+    if (check(msg, 'halo') || check(msg, 'hi') || check(msg, 'p ') || msg === 'p') {
+    res = "Halo kawan! 👋 Ada yang bisa kami bantu? Tanya soal Mod, 3D Model, atau unit bisnis kami juga boleh.";
+
+}
+ if (check(msg, 'assalamualaikum') || check(msg, 'asalamualaikum') || 
+    check(msg, 'assalamulaikum') || check(msg, 'asalamulaikum') || 
+    check(msg, 'assalamualikum') || check(msg, 'asalamualikum') || 
+    check(msg, 'assalamuallaikum') || check(msg, 'asalamuallaikum') || 
+    check(msg, 'assallamualikum') || check(msg, 'asallamualikum') || 
+    check(msg, 'asslam') || check(msg, 'aslam') || 
+    check(msg, 'assalamumualaikun') || check(msg, 'ass') || 
+    check(msg, 'asslm') || check(msg, 'assalamu') || 
+    check(msg, 'asalam') || check(msg, 'samlekom') || 
+    check(msg, 'kum salam') || check(msg, 'asslk')) {
+    res = "Waalaikumsalam kawan! 😊 Ada yang bisa admin bantu hari ini?";
+ 
+}
+ 
+            // --- 4. KONTAK ---
+ // Pengecekan spesifik masing-masing kontak
+else if (check(msg, 'wa') || check(msg, 'whatsapp') || check(msg, 'nomer')) {
+    res = `📞 <b>WhatsApp Order</b><br>+62 812-3456-789<br>Silakan chat untuk diskusi 3D Model atau pertanyaan umum.`;
+}
+else if (check(msg, 'ig') || check(msg, 'instagram')) {
+    res = `📸 <b>Instagram</b><br>@fa_production.1<br>Jangan lupa follow untuk info terbaru kawan!`;
+}
+else if (check(msg, 'tiktok')) {
+    res = `🎵 <b>TikTok</b><br>@fa_production.cpt<br>Cek video review produk kami di sini.`;
+}
+else if (check(msg, 'youtube') || check(msg, 'yt')) {
+    res = `▶️ <b>YouTube</b><br>Karya FA<br>Tonton tutorial dan review lengkap mod kami.`;
+}
+else if (check(msg, 'email')) {
+    res = `📧 <b>Email</b><br>fabusinesproduction@gmail.com<br>Untuk keperluan bisnis atau kerjasama.`;
+}
+else if (check(msg, 'fb') || check(msg, 'facebook')) {
+    res = `👤 <b>Facebook</b><br><a href="https://www.facebook.com/fathu.aziz.1" target="_blank">Fathu Aziz</a><br><b>PENTING:</b> Pembelian Mod ETS 2 wajib melalui sini kawan!`;
+}
+// Pengecekan kontak secara umum (seperti yang kamu minta sebelumnya)
+else if (check(msg, 'kontak') || check(msg, 'admin') || check(msg, 'hubungi')) {
+    res = `<b>Hubungi Kami 📱</b><br>
+    📞 WhatsApp: 085163163239<br>
+    📸 Instagram 1: @FA_production.1<br>
+    📸 Instagram 2: @Fathuazizzzz_20<br>
+    🎵 TikTok: @FA_production.cpt<br>
+    ▶️ YouTube: FA.production<br>
+    📧 Email: fabusinesproduction@gmail.com<br>
+    👤 FB 1: Fathu Aziz<br>
+    👤 FB 1: Karya FA`
+    ;
+}
+// --- LOGIKA IDENTITAS (SIAPA KITA) - VERSI LEBIH LENGKAP ---
+else if (
+    check(msg, 'siapa') || 
+    check(msg, 'tentang') || 
+    check(msg, 'apa itu') || 
+    check(msg, 'profil') || 
+    check(msg, 'sejarah') || 
+    check(msg, 'owner') || 
+    check(msg, 'pembuat') || 
+    check(msg, 'karyafa') || 
+    check(msg, 'karya fa') ||
+    check(msg, 'kenalan') ||
+    check(msg, 'info fa')
+) {
+    res = `<b>Tentang Karya FA</b><br><br>
+    Kami adalah wadah kreatif yang berfokus pada pengembangan aset digital dan layanan jasa profesional. <b>"Kita"</b> terdiri dari beberapa unit bisnis terintegrasi:<br><br>
+    🎮 <b>FA Production</b>: Kreator Mod ETS2 dan aset 3D berkualitas tinggi.<br>
+    🚌 <b>Aditama Holiday</b>: Biro perjalanan wisata & sewa bus pariwisata.<br>
+    💡 <b>Aditama Varled</b>: Spesialis modifikasi konsep lampu & LED kendaraan.<br>
+    🎥 <b>Aliza Media</b>: Layanan dokumentasi & manajemen konten digital.<br><br>
+    <b>Owner/Founder:</b> Fathu Aziz.<br>
+    Kami berkomitmen untuk terus berkarya dan memberikan hasil terbaik bagi seluruh kawan-kawan setia Karya FA!`;
+}
+// --- LOGIKA PENJELASAN UNIT BISNIS LAIN ---
+else if (check(msg, 'bisnis lain') || check(msg, 'bisnis fa') || check(msg, 'usaha') || check(msg, 'tentang') || check(msg, 'fa group'))  {
+    res = `<b>Unit Bisnis Ekosistem Karya FA 🌐</b><br><br>
+    Selain produksi Mod dan 3D Model, kami memiliki beberapa unit bisnis profesional lainnya:<br><br>
+    🚌 <b>Aditama Holiday</b><br>
+    Layanan biro perjalanan wisata yang menyediakan sewa bus pariwisata, paket tour, dan travel antar kota. Kami fokus pada kenyamanan dan pengalaman perjalanan yang berkesan.<br><br>
+    💡 <b>Aditama Varled</b><br>
+    Workshop spesialis variasi kendaraan, khususnya konsep pencahayaan. Kami melayani kustomisasi lampu LED, running text, dan konsep kelistrikan variasi agar kendaraan tampil beda dan elegan.<br><br>
+    🎥 <b>Aliza Media</b><br>
+    Layanan kreatif di bidang multimedia. Melayani jasa dokumentasi (foto & video), editing konten digital, hingga manajemen media sosial untuk brand atau personal.<br><br>
+    <i>Tertarik bekerja sama atau menggunakan layanan di atas? Silakan hubungi admin melalui menu <b>Kontak</b>!</i>`;
+}
+else if (check(msg, 'produk') || check(msg, 'list') || check(msg, 'daftar mod')) {
+    res = `<b>Daftar Produk Lengkap Karya FA Production 🎮</b><br>
+    Berikut adalah daftar Mod ETS 2 dan Aksesoris yang tersedia:<br><br>
+    💎 <b>3D MODEL ALL FORMAT</b> (File Mentah/Aset)<br>
+    - Harga: Diskusi via FB/WA (Tersedia 200+ Model)<br><br>
+    🚌 <b>MOD BUS (BASE):</b><br>
+    - Mod Bus Jebut 3 Medium: <b>100k</b><br>
+    - Mod Bus Rexus Piala Mas: <b>75k</b><br><br>
+    ✨ <b>MOD AKSESORIS (ACC):</b><br>
+    - Acc Ep3 MH: <b>35k</b><br>
+    - Acc Ep3 edit Jetbus 3 VA: <b>35k</b> (Free SR3VA)<br>
+    - Acc Ep4 MH: <b>30k</b><br>
+    - Acc Ep4: <b>30k</b><br>
+    - Acc Ep6 MH: <b>35k</b> (Free Avante SA)<br>
+    - Acc Avante SA: <b>35k</b> (Free Ep6 MH)<br>
+    - Acc SR3 Yello Flash VA: <b>35k</b> (Free JB3VA)<br>
+    - Acc Ep5 MH: (Coming Soon)<br>
+    - Acc Jetbus 5 EAS: (Coming Soon)<br>
+    - Acc Ep3 edit JB3 Nmodder: (WIP / Progress)<br><br>
+    <b>PENTING:</b><br>
+    • Pembelian Mod ETS 2 wajib via <b>Facebook Fathu Aziz</b> (Grup khusus).<br>
+    • Aksesoris (Acc) memerlukan Base Mod yang legal.<br><br>
+    <i>Ketik nama produk (misal: "Medium") untuk detail link dan syaratnya!</i>`;
+}
+
+
+
+// --- LOGIKA LAYANAN JASA ---
+else if (check(msg, 'jasa') || check(msg, 'terima') || check(msg, 'bisa buat') || check(msg, 'servis')) {
+    res = `<b>Layanan Jasa Profesional Karya FA 🛠️</b><br><br>
+    Kami melayani berbagai jasa profesional sesuai kebutuhan kamu:<br><br>
+    🖥️ <b>Jasa 3D Modeling</b><br>
+    Menerima pembuatan aset 3D mentah untuk kebutuhan game, simulasi, atau modding. (Diskusi via WA/FB).<br><br>
+    🚌 <b>Jasa Sewa Bus & Travel (Aditama Holiday)</b><br>
+    Menyediakan jasa transportasi pariwisata, antar jemput, dan paket tour wisata.<br><br>
+    ⚡ <b>Jasa Variasi LED (Aditama Varled)</b><br>
+    Menerima pengerjaan konsep lampu kendaraan, pemasangan LED custom, dan variasi kelistrikan lainnya.<br><br>
+    🎬 <b>Jasa Multimedia (Aliza Media)</b><br>
+    Menerima jasa editing video, dokumentasi acara, dan pembuatan konten kreatif.<br><br>
+    <b>Mau pakai jasa kami?</b><br>
+    Silakan ketik <b>Kontak</b> untuk berbicara langsung dengan admin terkait jasa yang kamu butuhkan!`;
+}
+
+
+// --- LOGIKA CARA BAYAR ---
+else if (check(msg, 'bayar') || check(msg, 'pembayaran') || check(msg, 'payment') || check(msg, 'rekening')|| check(msg, 'tranfer')|| check(msg, 'rekening') || check(msg, 'dana') || check(msg, 'transfer')) {
+    res = `<b>Metode Pembayaran Karya FA 💳</b><br><br>
+    Untuk memudahkan transaksi, kami menerima pembayaran melalui:<br>
+    - 🏦 <b>Transfer Bank (BNI/BRI)</b><br>
+    - 📱 <b>E-Wallet (DANA/OVO/GoPay/Shopee pay)</b><br><br>
+    <i>Nomor rekening/tujuan akan diberikan oleh Admin saat kamu melakukan pemesanan via DM Facebook atau WhatsApp.</i>`;
+}
+
+// --- LOGIKA UPDATE / ERROR ---
+else if (check(msg, 'update') || check(msg, 'error') || check(msg, 'eror') || check(msg, 'crash') || check(msg, 'tidak muncul') || check(msg, 'masalah')) {
+    res = `<b>Bantuan Teknis & Update Mod 🛠️</b><br><br>
+    - <b>Update Mod:</b> Semua info update bisa kamu cek secara berkala di <b>Grup Facebook Khusus Pembeli</b>.<br>
+    - <b>Mod Error/Crash:</b> Pastikan versi game ETS2 kamu sesuai dan tidak ada mod lain yang bentrok. Jika masih bermasalah, silakan posting di Grup FB agar admin atau kawan-kawan lain bisa membantu.<br><br>
+    Kami hanya menjamin dukungan teknis bagi pembeli <b>MOD LEGAL</b>.`;
+}
+
+// --- LOGIKA KERJA SAMA / COLLAB ---
+else if (check(msg, 'kerjasama') || check(msg, 'collab') || check(msg, 'kolaborasi') || check(msg, 'media partner')) {
+    res = `<b>Kerja Sama & Kolaborasi 🤝</b><br><br>
+    Kami sangat terbuka untuk kolaborasi, baik itu review mod, media partner, maupun project 3D custom.<br><br>
+    Silakan kirimkan proposal atau ajakan diskusi melalui Email: fabusinesproduction@gmail.com</b> atau langsung chat <b>WhatsApp Admin</b>.`;
+}
+
+
+
+// --- LOGIKA FA PRODUCTION / KARYA FA ---
+else if (
+    check(msg, 'fa production') || 
+    check(msg, 'karya fa') || 
+    check(msg, 'kreator') || 
+    check(msg, 'modder') || 
+    check(msg, 'bikin mod') || 
+    check(msg, 'pembuat aset') || 
+    check(msg, 'karya asli') || 
+    check(msg, 'fa project') || 
+    check(msg, 'developer') || 
+    check(msg, 'fa store')
+) {
+    res = `<b>FA Production / Karya FA 🎮🎨</b><br><br>
+    <b>FA Production</b> adalah unit bisnis utama dari <b>Karya FA</b> yang berfokus pada pengembangan aset digital berkualitas tinggi untuk simulasi dan desain kreatif.<br><br>
+    Kami adalah spesialis dalam menghadirkan karya digital yang presisi, meliputi:<br>
+    ✅ <b>Modding ETS2</b>: Pembuatan model bus (seperti Medium Bus & Rexus) serta berbagai aksesoris dengan detail tinggi.<br>
+    ✅ <b>3D Asset Creation</b>: Menyediakan lebih dari 200 aset 3D model mentah (All Format) untuk kebutuhan developer game dan kreator.<br>
+    ✅ <b>Originalitas Karya</b>: Setiap produk dikerjakan secara mandiri dengan standar kualitas yang kami jaga demi kepuasan kawan-kawan.<br>
+    ✅ <b>Support Komunitas</b>: Kami menyediakan wadah grup khusus bagi pembeli legal untuk mendapatkan update dan dukungan teknis.<br><br>
+    Kami bangga terus berinovasi sebagai kreator lokal untuk memberikan karya terbaik bagi dunia simulasi Indonesia!<br><br>
+    <i>Ketik <b>List Mod</b> untuk melihat daftar harga dan produk digital yang tersedia untuk diorder.</i>`;
+}
+// --- 1. ADITAMA CONCEPT - VARIASI (VARLED) ---
+// Kita cek kata "lampu" atau "variasi" dulu
+else if (check(msg, 'varled') || (check(msg, 'variasi') && (check(msg, 'lampu') || check(msg, 'led')))) {
+    res = `<b>Aditama Concept Variasi (Varled) 💡</b><br><br>
+    Spesialis konsep pencahayaan kendaraan! Kami melayani:<br>
+    ✅ Custom Lampu LED & Running Text.<br>
+    ✅ Konsep Kelistrikan Variasi.<br>
+    ✅ Modifikasi Lampu Bus/Mobil.<br><br>
+    <i>Bikin tampilan fisik kendaraanmu makin keren di dunia nyata!</i>`;
+}
+
+
+
+
+
+// 1. PAKET BUNDLING
+else if (check(msg, 'paket') || check(msg, 'borongan') || check(msg, 'beli semua')) {
+    res = `<b>Paket Bundling Hemat Karya FA 📦</b><br><br>Mau koleksi semua Mod kami? Kami menyediakan harga spesial untuk pembelian paket borongan. Kawan bisa mendapatkan harga jauh lebih murah dibanding beli satuan.<br><br><i>Silakan hubungi admin untuk mendapatkan penawaran harga paket terbaik!</i>`;
+}
+
+// 2. SEWA BUS
+else if (check(msg, 'sewa bus') || check(msg, 'bus pariwisata') || check(msg, 'bus parwis')) {
+    res = `<b>Sewa Bus Aditama Holiday 🚌</b><br><br>Butuh transportasi untuk wisata? Kami menyediakan berbagai unit bus pariwisata (Big Bus/Medium Bus) dengan fasilitas Full AC, Audio, dan Driver profesional.<br><br><b>Lokasi & Reservasi:</b> Langsung chat WA admin untuk cek ketersediaan unit dan harga sewa.`;
+}
+
+// 3. RUNNING TEXT
+else if (check(msg, 'running text') || check(msg, 'teks berjalan') || check(msg, 'tulisan lampu')) {
+    res = `<b>Custom Running Text & LED - Aditama Varled 💡</b><br><br>Kami melayani pembuatan Running Text custom untuk kaca depan/belakang bus dan kendaraan lain. Teks bisa diubah-ubah sesuai keinginan kawan melalui HP!<br><br><b>Harga:</b> Tergantung ukuran dan jumlah baris. Hubungi admin untuk konsultasi.`;
+}
+
+// 4. MASALAH DOWNLOAD
+else if (check(msg, 'cara download') || check(msg, 'link mati') || check(msg, 'ga bisa download')) {
+    res = `<b>Kendala Download File 📂</b><br><br>Jika kawan mengalami kendala link mati atau tidak bisa download, pastikan kawan sudah login ke akun Facebook yang terdaftar di grup. Jika masih bermasalah, segera lapor ke admin agar link diperbarui.`;
+}
+
+// 5. UPDATE VERSI
+else if (check(msg, 'update terbaru') || check(msg, 'versi baru') || check(msg, 'v1.50')) {
+    res = `<b>Update Versi ETS2 Terbaru 🎮</b><br><br>Kami selalu memantau pembaruan game dari SCS Software. Jika ada update versi (misal v1.50 ke atas), kami akan segera melakukan penyesuaian mod. Update gratis untuk pembeli legal!`;
+}
+
+// 6. MAP / PETA
+else if (check(msg, 'map') || check(msg, 'peta') || check(msg, 'map indo')) {
+    res = `<b>Kesesuaian Map (Peta) 🗺️</b><br><br>Mod kami bersifat universal. Bisa digunakan di Map bawaan game (Europe) maupun Map Indonesia (seperti Map JRR, Map ICRF, Map Sitinjau Lauik, dll).`;
+}
+
+// 7. SOUND / SUARA
+else if (check(msg, 'sound') || check(msg, 'suara mesin') || check(msg, 'klakson')) {
+    res = `<b>Sound & Klakson Mod 🔊</b><br><br>Setiap mod bus kami sudah dilengkapi dengan sound mesin yang realistis dan klakson standar. Kawan juga bisa menambahkan mod sound eksternal jika ingin variasi suara yang berbeda.`;
+}
+
+// 8. TEMPLATE LIVERY
+else if (check(msg, 'livery free') || check(msg, 'skin gratis') || check(msg, 'template livery')) {
+    res = `<b>Template & Livery 🖌️</b><br><br>Dalam setiap folder mod, kami menyertakan template livery berformat .psd atau .png agar kawan bisa membuat desain skin sendiri secara gratis.`;
+}
+
+// 9. REKOMENDASI
+else if (check(msg, 'rekomendasi') || check(msg, 'saran mod') || check(msg, 'paling bagus')) {
+    res = `<b>Rekomendasi Mod Karya FA ⭐</b><br><br>Jika kawan bingung, kami sangat menyarankan <b>Mod Jetbus 3 Medium</b>. Mod ini adalah best-seller kami karena detailnya yang presisi dan ringan digunakan.`;
+}
+
+// 10. JASA EDITING
+else if (check(msg, 'editin video') || check(msg, 'jasa edit') || check(msg, 'tolong edit')) {
+    res = `<b>Jasa Editing Aliza Media 🎥</b><br><br>Punya rekaman video tapi bingung cara editnya? Kirim file mentah kawan ke kami! Kami melayani jasa editing video cinematic, vlog, atau promosi dengan hasil profesional.`;
+}
+
+// 11. BAYAR PAKAI PULSA
+else if (check(msg, 'pakai pulsa') || check(msg, 'bisa pulsa') || check(msg, 'via pulsa')) {
+    res = `<b>Pembayaran Via Pulsa 📱</b><br><br>Mohon maaf kawan, saat ini kami <b>TIDAK MENERIMA</b> pembayaran via pulsa. Silakan gunakan Transfer Bank atau E-Wallet (DANA/OVO/GoPay/ShopeePay) yang lebih praktis.`;
+}
+
+// 12. YOUTUBER
+else if (check(msg, 'youtuber') || check(msg, 'review mod') || check(msg, 'konten creator')|| check(msg, 'kerja sama')|| check(msg, 'kerjasama')) {
+    res = `<b>Kerjasama Review Mod 🤝</b><br><br>Halo kawan kreatif! Kami terbuka untuk kerjasama review mod. Silakan kirimkan link channel YouTube kawan ke admin untuk kami tinjau terlebih dahulu.`;
+}
+
+// 13. MOD CRASH
+else if (check(msg, 'keluar sendiri') || check(msg, 'game crash') || check(msg, 'force close')) {
+    res = `<b>Solusi Mod Crash (FC) 🛠️</b><br><br>1. Pastikan urutan mod di Mod Manager sudah benar.<br>2. Cek apakah ada mod lain yang bentrok.<br>3. Pastikan spesifikasi PC mencukupi. Jika masih crash, silakan kirim file game.log ke grup FB.`;
+}
+
+// 14. PAKET WISATA
+else if (check(msg, 'paket wisata') || check(msg, 'tour wisata') || check(msg, 'ziarah')) {
+    res = `<b>Paket Wisata ACH Tour 🚌</b><br><br>Kami melayani paket tour lengkap (Bus, Hotel, Makan, Tiket Wisata). Cocok untuk acara keluarga, sekolah (Study Tour), atau Ziarah Wali.`;
+}
+
+// 15. ALAMAT
+else if (check(msg, 'lokasi') || check(msg, 'alamat kantor') || check(msg, 'dimana')) {
+    res = `<b>Lokasi Workshop & Studio 📍</b><br><br>Kami berlokasi di kota surakarta. Untuk koordinat lengkapnya kawan bisa hubungi WA Admin agar dikirimkan Share Lokasi.`;
+}
+
+// 16. MOD TRAFFIC AI
+else if (check(msg, 'traffic') || check(msg, 'lalu lintas') || check(msg, 'bus ai')) {
+    res = `<b>Mod Traffic Karya FA 🚗</b><br><br>mohon maaf kita untuk mod traffic belum ada..... hm.... tapi tidak menutup kemungkinan kita nanti juga buat kok, simak terus ya sosial media kita....`;
+}
+
+// 17. LUAR NEGERI
+else if (check(msg, 'luar negeri') || check(msg, 'malaysia') || check(msg, 'paypal')) {
+    res = `<b>International Orders 🌎</b><br><br>For international buyers, we accept payments via <b>PayPal/WISE</b>. Please contact our admin for more information.`;
+}
+
+// 18. LOKER / JOIN
+else if (check(msg, 'loker') || check(msg, 'kerja') || check(msg, 'join team')) {
+    res = `<b>Informasi Karir/Tim 👥</b><br><br>Saat ini tim Karya FA sudah lengkap kawan. Namun, tidak menutup kemungkinan di masa depan kami akan membuka lowongan. Pantau terus info resmi di sosial media kami ya!`;
+}
+
+// 19. MABAR / CONVOY
+else if (check(msg, 'komunitas') || check(msg, 'mabar') || check(msg, 'main bareng')) {
+    res = `<b>Multi player/mabar🎮</b><br><br>Mod kami bisa di gunakan untuk mabar kok, yang jelas harus resmi ya.... oh ya jangan lupa juga untuk teman yang kalian ajak mabar pastikan mempunyai mod kita juga secara resmi!!`;
+}
+
+// 20. KADO / GIFT
+else if (check(msg, 'hadiah') || check(msg, 'gift mod') || check(msg, 'buat kado') || check(msg, 'gift')) {
+    res = `<b>Beli Mod Untuk Hadiah 🎁</b><br><br>Mau kasih kado mod untuk teman? Bisa kawan! Cukup beritahukan link akun FB teman kawan saat pemesanan, nanti admin akan memproses untuk teman kawan tersebut. Tetapi ingat... untuk order MOD hanya bisa melalui facebook Fathu Aziz aja yak..`;
+}
+
+
+
+
+
+
+// --- 2. ADITAMA CONCEPT - HOLIDAY (WISATA) ---
+// Pakai kata kunci tour/sewa agar tidak tertukar dengan mod bus
+else if (check(msg, 'holiday') || check(msg, 'ach tour') || check(msg, 'sewa bus') || check(msg, 'paket wisata')) {
+    res = `<b>Aditama Concept Holiday (ACH Tour) 🚌</b><br><br>
+    Solusi perjalanan wisata dan sewa bus pariwisata!<br>
+    ✅ Tour Organizer & Travel Planner.<br>
+    ✅ Sewa Unit Bus & Travel.<br>
+    ✅ Paket Study Tour & Gathering.<br><br>
+    <i>Siap jalan-jalan seru bareng ACH Tour? Chat admin sekarang!</i>`;
+}
+
+// --- 5. JASA (UMUM) ---
+// Jika user cuma tanya "jasa" tanpa spesifik nama unitnya
+else if (check(msg, 'jasa') || check(msg, 'layanan')) {
+    res = `<b>Layanan Jasa Karya FA Group 🛠️</b><br><br>
+    Kawan butuh jasa yang mana?<br>
+    1️⃣ <b>FA Production</b> (Mod & 3D Model)<br>
+    2️⃣ <b>Aditama Holiday</b> (Sewa Bus & Wisata)<br>
+    3️⃣ <b>Aditama Varled</b> (Variasi Lampu/LED)<br>
+    4️⃣ <b>Aliza Media</b> (Foto, Video & Editing)<br><br>
+    <i>Silakan ketik nama unit bisnisnya untuk penjelasan lebih lengkap!</i>`;
+}
+
+
+// --- LOGIKA ALIZA MEDIA ---
+else if (
+    check(msg, 'aliza') || 
+    check(msg, 'media') || 
+    check(msg, 'dokumentasi') || 
+    check(msg, 'shooting') || 
+    check(msg, 'editing') || 
+    check(msg, 'konten') || 
+    check(msg, 'cinematic') || 
+    check(msg, 'foto') || 
+    check(msg, 'video') || 
+    check(msg, 'multimedia')
+) {
+  res = `<b>Aliza Media 🎥📸 - Creative Multimedia Service</b><br><br>
+    <b>Aliza Media</b> adalah unit kreatif dari Karya FA yang bergerak di bidang multimedia profesional. Kami fokus pada estetika visual dan penyampaian pesan melalui konten digital yang berkualitas.<br><br>
+    <b>Layanan Detail Kami meliputi:</b><br><br>
+    ✅ <b>Jasa Dokumentasi Profesional</b><br>
+    Menangkap momen berharga untuk berbagai acara seperti event, trip wisata (bersama Aditama Holiday), gathering, hingga wedding. Kami memastikan setiap detik tertangkap dengan sudut pandang terbaik.<br><br>
+    ✅ <b>Editing Video Cinematic & Teaser</b><br>
+    Proses editing tingkat lanjut dengan sentuhan <i>color grading</i> profesional. Kami melayani pembuatan video cinematic berdurasi panjang maupun video teaser pendek (Reels/TikTok/Shorts) untuk promosi atau kenang-kenangan.<br><br>
+    ✅ <b>Content Creator & Social Media Management</b><br>
+    Kami membantu mengelola branding media sosial Anda. Mulai dari perencanaan konsep konten, desain visual, hingga manajemen jadwal posting agar akun bisnis atau personal Anda tampil lebih profesional dan menarik.<br><br>
+    ✅ <b>Jasa Foto Produk & Company Profile</b><br>
+    Layanan fotografi khusus untuk menonjolkan nilai jual produk Anda atau membangun citra perusahaan yang terpercaya melalui profil visual yang kuat.<br><br>
+    <i>"Abadikan momen berhargamu dan bangun brand digitalmu dengan sentuhan profesional dari Aliza Media!"</i><br><br>
+    <b>Konsultasi Project:</b> Silakan hubungi admin melalui menu <b>Kontak</b> kawan!`;
+}
+// --- LOGIKA ADITAMA CONCEPT VARIASI (VARLED) ---
+else if (
+    check(msg, 'varled') || 
+    check(msg, 'variasi') || 
+    check(msg, 'lampu') || 
+    check(msg, 'led') || 
+    check(msg, 'kelistrikan') || 
+    check(msg, 'custom lampu') || 
+    check(msg, 'running text') || 
+    check(msg, 'modifikasi') || 
+    check(msg, 'aksesoris lampu') || 
+    check(msg, 'lampu bus')
+) {
+    res = `<b>Aditama Concept Variasi (Varled) 💡⚡</b><br><br>
+    <b>Aditama Varled</b> adalah spesialis modifikasi konsep pencahayaan dan variasi kelistrikan kendaraan.<br><br>
+    Kami melayani:<br>
+    ✅ <b>Konsep Lampu LED</b>: Pemasangan LED custom, lampu kolong, hingga interior.<br>
+    ✅ <b>Running Text</b>: Pembuatan teks berjalan kustom untuk bus atau kendaraan lain.<br>
+    ✅ <b>Variasi Konsep</b>: Desain pencahayaan yang elegan dan beda dari yang lain.<br><br>
+    <i>Bikin kendaraanmu jadi pusat perhatian dengan konsep lampu dari Aditama Varled!</i>`;
+}
+
+
+
+
+
+
+
+
+
+
+// --- BAGIAN OTOMATIS (DISCLAIMER) ---
+    // Di sinilah keajaibannya, cukup ubah di sini maka semua pesan akan berubah
+ // --- BAGIAN OTOMATIS (DISCLAIMER) ---
+// Menggunakan var(--text-muted) agar warna teks otomatis berubah di Light/Dark Mode
+// Menggunakan var(--purple-dark) untuk border agar warnanya serasi dengan tema pilihan user
+const disclaimer = `
+    <br><br>
+    <small>
+        <i style="color: var(--text-muted);">⚠️ <b>Disclaimer:</b> Ini adalah chatbot otomatis. 
+            <span style="border-bottom: 2px solid var(--purple-dark);">
+                Silakan <b>konfirmasi ulang</b> ke kontak yang ada di bawah untuk memastikan. 
+                Ketik <b>kontak</b> untuk mendapatkan kontak kita!.
+            </span>
+        </i>
+    </small>`; 
+
+    // Kirim pesan asli + disclaimer
+    appendMessage(res + disclaimer, 'bot');
+       }
+    </script>
+</body>
+</html>

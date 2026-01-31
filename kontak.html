@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - Karya FA 🎬</title>
+    <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+
+
+
+        <button id="theme-toggle">
+        <span id="theme-icon">🌙</span> &nbsp; <span id="theme-text">Mode</span>
+    </button>
+
+
+
+
+
+    
+    <div class="bg-overlay"></div>
+
+    <aside>
+        <div class="brand-logo">Karya FA 🎬</div>
+        <nav>
+            <a href="index.html" class="nav-link-single">🏠 Kembali ke Beranda</a>
+            <a href="katalog_tambahan.html" class="nav-link-single">📦 Katalog Produk</a>
+        </nav>
+    </aside>
+
+    <main>
+        <section class="welcome-clean">
+            <h1>Hubungi Kami 📱</h1>
+            <p>Silakan hubungi kami melalui platform di bawah ini untuk pemesanan atau pertanyaan.</p>
+        </section>
+
+        <div class="grid-layout">
+            <a href="https://wa.me/085163163239" class="card-contact border-wa">
+                <div class="icon-box">📞</div>
+                <div class="info-text">
+                    <h4>WhatsApp Order (Official FA)</h4>
+                    <p>085163163239</p>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/fathuazizzzz_20/?hl=id" class="card-contact border-ig">
+                <div class="icon-box">📸</div>
+                <div class="info-text">
+                    <h4>Instagram (FathuAziz)</h4>
+                    <p>@fathuazizzzz_20</p>
+                </div>
+            </a>
+
+
+            <a href="https://www.instagram.com/fa_production.1/?hl=id" class="card-contact border-ig">
+                <div class="icon-box">📸</div>
+                <div class="info-text">
+                    <h4>Instagram (FA.production)</h4>
+                    <p>@fa_production.1</p>
+                </div>
+            </a>
+
+            <a href="https://www.tiktok.com/@fa.production_karyafa?lang=id-ID" class="card-contact border-tt">
+                <div class="icon-box">🎵</div>
+                <div class="info-text">
+                    <h4>TikTok</h4>
+                    <p>@fa.production_karyafa</p>
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/@FAproduction_20" class="card-contact border-yt">
+                <div class="icon-box">▶️</div>
+                <div class="info-text">
+                    <h4>YouTube</h4>
+                    <p>FA.production</p>
+                </div>
+            </a>
+
+            <a href="mailto:email@gmail.com" class="card-contact border-mail">
+                <div class="icon-box">📧</div>
+                <div class="info-text">
+                    <h4>Email</h4>
+                    <p>fabusinesproduction@gmail.com</p>
+                </div>
+            </a>
+
+
+            <a href="https://www.facebook.com/fathu.aziz.1" class="card-contact border-mail">
+                <div class="icon-box">🅵</div>
+                <div class="info-text">
+                    <h4>Facebook (Fathu Aziz)</h4>
+                    <p>Fathu Aziz</p>
+                </div>
+            </a>
+
+
+            <a href="https://www.facebook.com/fathuazizberkarya" class="card-contact border-mail">
+                <div class="icon-box">🅵</div>
+                <div class="info-text">
+                    <h4>Facebook (Karya FA)</h4>
+                    <p>Karya FA</p>
+                </div>
+            </a>
+        </div>
+        </div>
+        <footer>
+            Made with ❤️ by Karya FA Production | © 2026
+        </footer>
+    </main>
+
+    <script>
+        const soundClick = new Audio('https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3');
+        document.querySelectorAll('.card-contact').forEach(item => {
+            item.addEventListener('click', () => { soundClick.play(); });
+        });
+    </script>
+</body>
+</html>
