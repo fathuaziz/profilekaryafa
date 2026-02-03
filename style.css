@@ -859,7 +859,7 @@ nav a, nav .menu-item {
 }
 
 /* Responsif Tablet & Desktop */
-@media (min-width: 768px) {
+@media (min-width: 1208px) {
     .services-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
